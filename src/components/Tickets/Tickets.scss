@@ -11,8 +11,95 @@
       format("woff"),
     url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/4e9b153c-2ce2-4780-9e82-de46b01ff111.ttf")
       format("truetype");
-};
+}
 
+.teamContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  grid-area: 2/2/3/3;
+  margin:32px;
+  padding: 0 50px;
+}
 
+.teamMember {
+  width: 220px;
+  height: 400px;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);
+  padding: 15px;
+  margin: 10px;
+  background-color: $color-projectRouge;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  transition: all 0.25s;
+  clip-path: polygon(
+    0.25rem 0.1rem,
+    100% 0.5rem,
+    calc(100% - 0.5rem) calc(100% - 0.1rem),
+    0.97897rem calc(110% - 0.1rem)
+  );
 
+  &:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 
+  &__name-header {
+    color: $color-projectBlack;
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  &__name {
+    color: $color-projectWhite;
+    font-size: 2.5em;
+    margin: 10px 0;
+  }
+
+  &__role-header {
+    color: $color-projectBlack;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+  &__role {
+    color: $color-projectWhite;
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+
+  &__count-header {
+    color: $color-projectBlack;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+  &__counterBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    &-button {
+      background: none;
+      border: 0;
+      font-size: 4em;
+      margin: 0 7px;
+      color: $color-projectBlack;
+    }
+
+    &-button:hover {
+      color: $color-projectWhite;
+    }
+
+    &-count {
+      font-size: 3.5em;
+      color: $color-projectWhite;
+      font-weight: 700;
+    }
+  }
+}

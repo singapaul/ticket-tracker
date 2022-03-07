@@ -24,6 +24,7 @@
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);
   background-color: $color-projectRed;
   transition: all .25s;
+  grid-area: 1/1/2/3;
 
   &:hover {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);

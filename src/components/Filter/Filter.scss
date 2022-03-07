@@ -14,22 +14,24 @@
 // }
 
 .filter {
-  width: 25%;
+width: 100%;
+  height: 800px;
   padding: 20px;
+  margin:20px;
   background-color: $color-projectYellow;
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);
   transition: all 0.25s;
+  grid-area: 2/1/3/2;
 
   &:hover {
-    clip-path: polygon(0 0, 90% 0, 90% 90%, 0 90%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
   clip-path: polygon(
     0.25rem 0.75rem,
     100% 0.5rem,
     calc(100% - 0.5rem) calc(100% - 0.25rem),
-    0.87897rem calc(100% - 1rem),
-    
+    0.87897rem calc(100% - 1rem)
   );
 
   &__heading {
