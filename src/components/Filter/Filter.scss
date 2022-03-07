@@ -1,0 +1,44 @@
+@use "../../assets/SASS/variables.scss" as *;
+
+// @font-face {
+//   font-family: "Bassanova W03 Regular";
+//   src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/598766aa-1b77-4518-abb1-ce6be0451d27.eot?#iefix");
+//   src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/598766aa-1b77-4518-abb1-ce6be0451d27.eot?#iefix")
+//       format("eot"),
+//     url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/2ad3a7eb-b199-47e5-a40f-a234d82a05d2.woff2")
+//       format("woff2"),
+//     url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/df4e07cb-84d6-4b39-9da2-032ed42d5760.woff")
+//       format("woff"),
+//     url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/4e9b153c-2ce2-4780-9e82-de46b01ff111.ttf")
+//       format("truetype");
+// }
+
+.filter {
+  width: 25%;
+  padding: 20px;
+  background-color: $color-projectYellow;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);
+  transition: all 0.25s;
+
+  &:hover {
+    clip-path: polygon(0 0, 90% 0, 90% 90%, 0 90%);
+  }
+
+  clip-path: polygon(
+    0.25rem 0.75rem,
+    100% 0.5rem,
+    calc(100% - 0.5rem) calc(100% - 0.25rem),
+    0.87897rem calc(100% - 1rem),
+    
+  );
+
+  &__heading {
+    color: $color-projectWhite;
+    font-family: Bassanova W03 Regular, sans-serif;
+  }
+
+  &__subHeading {
+    color: $color-projectWhite;
+    font-family: Bassanova W03 Regular, sans-serif;
+  }
+}
