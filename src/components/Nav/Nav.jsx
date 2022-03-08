@@ -4,7 +4,7 @@ import "./Nav.scss";
 
 const Nav = () => {
   return (
-    <div className="nav bass bass-1 concrete-wall">
+    <div className="nav">
       <a href="www.google.com" className="nav__icon">
         Tracker
       </a>

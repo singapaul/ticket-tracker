@@ -28,12 +28,14 @@
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);
   padding: 15px;
   margin: 10px;
-  background-color: $color-projectRouge;
+  // background-color: $color-projectRouge;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   text-align: center;
+  align-self: center;
+  justify-self: center;
   transition: all 0.25s;
   clip-path: polygon(
     0.25rem 0.1rem,
@@ -41,6 +43,11 @@
     calc(100% - 0.5rem) calc(100% - 0.1rem),
     0.97897rem calc(110% - 0.1rem)
   );
+
+// background colors: 
+
+
+
 
   &:hover {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -55,7 +62,7 @@
 
   &__name {
     color: $color-projectWhite;
-    font-size: 2.5em;
+    font-size: 2.7em;
     margin: 10px 0;
   }
 
@@ -103,4 +110,17 @@
       font-weight: 700;
     }
   }
+}
+
+
+.green {
+  background-color: $color-projectGreen;
+}
+
+.yellow{
+  background-color: $color-projectYellow;
+
+}
+.red{
+  background-color: $color-projectRed;
 }

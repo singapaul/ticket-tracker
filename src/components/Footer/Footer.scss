@@ -1,0 +1,74 @@
+@use "../../assets/SASS/variables.scss" as *;
+
+@font-face {
+  font-family: "Bassanova W03 Regular";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/598766aa-1b77-4518-abb1-ce6be0451d27.eot?#iefix");
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/598766aa-1b77-4518-abb1-ce6be0451d27.eot?#iefix")
+      format("eot"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/2ad3a7eb-b199-47e5-a40f-a234d82a05d2.woff2")
+      format("woff2"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/df4e07cb-84d6-4b39-9da2-032ed42d5760.woff")
+      format("woff"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/4e9b153c-2ce2-4780-9e82-de46b01ff111.ttf")
+      format("truetype");
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);
+  background-color: $color-projectRed;
+  transition: all 0.25s;
+  grid-area: 1/1/2/3;
+
+  &:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  clip-path: polygon(
+    0.25rem 0.75rem,
+    100% 0.6rem,
+    calc(100% - 1rem) calc(100% - 0.5rem),
+    0.8587897rem calc(100% - 1rem)
+// 5% 5%,
+// 95% 10%,
+// 93% 90%,
+// 2% 90%,
+
+
+  );
+
+  &__Greeting {
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 900;
+    font-family: Bassanova W03 Regular, sans-serif;
+    color: $color-projectWhite;
+  }
+
+  &__links {
+    display: inline;
+    list-style: none;
+
+    &-link {
+      display: inline;
+      padding: 0 20px;
+      text-decoration: none;
+      font-size: 1.5em;
+      font-weight: 600;
+      color: $color-projectWhite;
+      font-family: Bassanova W03 Regular, sans-serif;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nav-bar {
+    grid-column: 1 / -1;
+  }
+}
