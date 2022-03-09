@@ -5,6 +5,10 @@ import Ticket from "../Ticket/Ticket";
 
 const Tickets = ({ teamArray }) => {
   const cardsArray = teamArray.map((teamMember) => {
+
+
+
+    
    return <Ticket teamMember={teamMember} />;
   });
 
