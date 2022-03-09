@@ -19,11 +19,11 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin:0 auto;
+  margin: 0 auto;
   padding: 20px;
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);
   background-color: $color-projectRed;
-  transition: all .25s;
+  transition: all 0.25s;
   grid-area: 1/1/2/3;
 
   &:hover {
@@ -43,6 +43,70 @@
     font-weight: 900;
     font-family: Bassanova W03 Regular, sans-serif;
     color: $color-projectWhite;
+    // split icon styles
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: max-content;
+  }
+
+  // adding in the stylings
+
+  &__icon > .split-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    transition: color 0ms 200ms;
+  }
+
+  &__icon > .split-text {
+    color: transparent;
+    user-select: none;
+    transition-delay: 0ms;
+  }
+
+  &__icon > .split-text::before,
+  &__icon > .split-text::after {
+    position: absolute;
+    content: attr(data-text);
+    height: calc(0.5em);
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    color: $color-projectWhite;
+    transition: color 200ms ease-in-out, transform 200ms ease-in-out;
+    user-select: none;
+  }
+
+  &__icon:hover > .split-text::before,
+  &__icon:hover > .split-text::after {
+    color: $color-projectWhite;
+    transform: skewX(15deg);
+  }
+
+  &__icon > .split-text::after {
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__icon::before {
+    content: "";
+    position: absolute;
+    width: 110%;
+    left: -5%;
+    top: calc(50% - 1px);
+    height: 4px;
+    transform: scale(0);
+    background-color: $color-projectWhite;
+    border-radius: 20px;
+    z-index: 1;
+    transition: transform 200ms ease-in-out;
+  };
+
+  &__icon:hover::before {
+    transform: scale(1);
   }
 
   &__links {
@@ -66,4 +130,3 @@
     grid-column: 1 / -1;
   }
 }
-
