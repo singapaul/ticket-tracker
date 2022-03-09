@@ -13,10 +13,14 @@ const Nav = () => {
 
       <ul className="nav__links">
         <a className="nav__links-link" href="">
-          tickets
+          <span class="split-text" data-text="tickets">
+            tickets
+          </span>
         </a>
         <a className="nav__links-link" href="">
-          Analytics
+          <span class="split-text" data-text="analytics">
+            analytics
+          </span>
         </a>
       </ul>
     </div>

@@ -6,6 +6,11 @@ import Tickets from "./components/Tickets/Tickets";
 import team from "./data/team.js";
 
 function App() {
+
+// my states go here
+
+
+
   return (
     <div className="App">
       <div className="App-grid">
