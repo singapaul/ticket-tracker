@@ -18,7 +18,17 @@ function App() {
   // const [counter, setCounter] = useState(Math.floor(Math.random() * 20));
   const [counter, setCounter] = useState(0);
 
+  // make a copy of the data object
+  const teamCopy = [...team];
+  console.log(teamCopy);
+  team.forEach((member) => {member.counter = 0});
+  console.log(teamCopy);
 
+
+  // set our base state
+
+
+const [count,  setCount] = useState([teamCopy])
 
   const handleDecrement = () => {
     if (counter < 1) {
@@ -52,6 +62,7 @@ function App() {
           className="App-grid__Tickets"
           teamArray={team}
           counter={counter}
+          teamCopyWState = {teamCopy}
           setCounter={setCounter}
           handleDecrement={handleDecrement}
           handleIncrement={handleIncrement}
