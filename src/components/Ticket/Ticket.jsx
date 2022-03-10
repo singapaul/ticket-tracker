@@ -1,8 +1,15 @@
 import React from "react";
 import { useState } from "react";
 
-const Ticket = ({ teamMember, counter, setCounter, handleDecrement, handleIncrement, colorIncrement, teamCopy }) => {
-
+const Ticket = ({
+  teamMember,
+  counter,
+  setCounter,
+  handleDecrement,
+  handleIncrement,
+  colorIncrement,
+  teamCopy,
+}) => {
   const warning = () => {
     if (counter < 25) {
       return teamMember.role;
@@ -16,8 +23,8 @@ const Ticket = ({ teamMember, counter, setCounter, handleDecrement, handleIncrem
   };
 
   // get value of team copy
-  console.log("we logging")
-  console.log(teamCopy.id)
+  console.log("we logging");
+  console.log(teamCopy.id);
 
   return (
     // <h1>Placeholder</h1>
