@@ -16,26 +16,31 @@ function App() {
 
   // make a copy of the data object
   const teamCopy = [...team];
-  console.log(teamCopy);
+  // console.log(teamCopy);
   teamCopy.forEach((member) => {
-    member.state = counter;
+    member.state = 0;
   });
-console.log(teamCopy)
+// console.log(teamCopy)
   // set our base state
-  //
 
-  const handleDecrement = () => {
+  const [count, setCount] = useState(teamCopy)
+
+
+
+
+
+
+  const handleDecrement = (event) => {
+    console.log(event.target.className)
     if (counter < 1) {
       setCounter(0);
     } else {
       setCounter(counter - 1);
-
-
-
     }
   };
-  const handleIncrement = () => {
+  const handleIncrement = (event) => {
     setCounter(counter + 1);
+    console.log(event.target.className)
   };
 
   const colorIncrement = () => {

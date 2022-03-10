@@ -22,9 +22,6 @@ const Ticket = ({
     }
   };
 
-  // get value of team copy
-  console.log("we logging");
-  console.log(teamCopy.id);
 
   return (
     // <h1>Placeholder</h1>
@@ -41,7 +38,7 @@ const Ticket = ({
       <div className="teamMember__counterBox">
         <button
           onClick={handleDecrement}
-          className="teamMember__counterBox-button"
+          className= {`teamMember__counterBox-button ${teamMember.id}subtractButton`} 
         >
           -
         </button>
@@ -50,7 +47,7 @@ const Ticket = ({
         </div>
         <button
           onClick={handleIncrement}
-          className="teamMember__counterBox-button"
+          className={`teamMember__counterBox-button ${teamMember.id}addButton`}
         >
           +
         </button>
