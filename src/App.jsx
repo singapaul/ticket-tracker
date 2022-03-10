@@ -21,14 +21,30 @@ function App() {
   // make a copy of the data object
   const teamCopy = [...team];
   console.log(teamCopy);
-  team.forEach((member) => {member.counter = 0});
+  teamCopy.forEach((member) => {
+    member.state = 0;
+  });
   console.log(teamCopy);
-
 
   // set our base state
 
+  const [state, setState] = useState({
+    todos: [teamCopy],
+  });
 
-const [count,  setCount] = useState([teamCopy])
+// loop over the todos list and find the provided id.
+let updatedList = state.todos.map(item => {
+        if (item.id == id){
+           {...item, state: !item.state}; 
+        } else {return item}; // else return unmodified item 
+      });
+  
+    setState({todos: updatedList}); // set state to new object with updated list
+
+
+
+
+
 
   const handleDecrement = () => {
     if (counter < 1) {
@@ -62,7 +78,7 @@ const [count,  setCount] = useState([teamCopy])
           className="App-grid__Tickets"
           teamArray={team}
           counter={counter}
-          teamCopyWState = {teamCopy}
+          teamCopyWState={teamCopy}
           setCounter={setCounter}
           handleDecrement={handleDecrement}
           handleIncrement={handleIncrement}
