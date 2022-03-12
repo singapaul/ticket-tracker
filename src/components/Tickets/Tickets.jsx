@@ -21,16 +21,30 @@ const Tickets = ({ teamData, handleIncrement, handleDecrement }) => {
 
     return (
       <div key={member.id} className={colorIncrement()}>
-        <p>{member.name}</p>
-        <p>{member.role}</p>
-        <p>{member.id}</p>
-        <button id={member.id} onClick={handleDecrement}>
-          -
-        </button>
-        <p>{member.counter}</p>
-        <button id={member.id} onClick={handleIncrement}>
-          +
-        </button>
+        <p className="teamMember__name-header">name</p>
+        <p className="teamMember__name">{member.name}</p>
+        <p className="teamMember__role-header">role</p>
+        <p className="teamMember__role">{member.role}</p>
+        <p className="teamMember__count-header">tickets</p>
+        <div className="teamMember__counterBox">
+          <button
+            id={member.id}
+            onClick={handleDecrement}
+            className="teamMember__counterBox-button"
+          >
+            -
+          </button>
+          <div className="teamMember__counterBox-count">
+            <p>{member.counter}</p>
+          </div>
+          <button
+            id={member.id}
+            onClick={handleIncrement}
+            className="teamMember__counterBox-button"
+          >
+            +
+          </button>
+        </div>
       </div>
     );
   });

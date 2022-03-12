@@ -6,7 +6,6 @@ import Tickets from "./components/Tickets/Tickets";
 import team from "./data/team.js";
 import React, { useState } from "react";
 
-
 function App() {
   // Setting the initial app state
   const [teamData, setTeamData] = useState(
@@ -48,27 +47,6 @@ function App() {
 
   // // copy and paste are please don't implement anything below this
 
-
-  // const colorIncrement = () => {
-  //   if (counter >= 0 && counter <= 5) {
-  //     return "teamMember green";
-  //   } else if (counter >= 6 && counter <= 15) {
-  //     return "teamMember yellow";
-  //   } else if (counter >= 16) {
-  //     return "teamMember red";
-  //   } else {
-  //     return "teamMember red";
-  //   }
-  // };
-
-  // const warningFlag = () => {
-  //   if (counter > 24) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // };
-
   // const warning = () => {
   //   if (counter <25) {
   //     return teamMember.role
@@ -89,10 +67,11 @@ function App() {
 
   return (
     <div className="App">
+      <Nav className="App-grid__Nav" />
       <div className="App-grid">
-        <Nav className="App-grid__Nav" />
         <Filter className="App-grid__Filter" />
         <Tickets
+          className="Tickets"
           ident={teamData.id}
           teamData={teamData}
           handleIncrement={handleIncrement}
