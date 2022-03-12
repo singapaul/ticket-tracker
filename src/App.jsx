@@ -113,7 +113,6 @@ function App() {
       />
       
       <a>{linkText}</a>
-      {/* Display the state value there */}
       <p>{count}</p>
     
     </div>
