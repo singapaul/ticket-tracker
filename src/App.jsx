@@ -6,9 +6,7 @@ import Tickets from "./components/Tickets/Tickets";
 import team from "./data/team.js";
 import React, { useState } from "react";
 
-
 function App() {
-
   // Setting the initial app state
   const [teamData, setTeamData] = useState(
     team.map((member) => {
@@ -21,38 +19,55 @@ function App() {
     })
   );
 
-// function to increment a value 
-const handleIncrement = (event) => {
-  console.log(event.target)
-  setTeamData(
-    teamData.map((obj) =>
-      obj.id == event.target.id ? { ...obj, counter: (obj.counter +1) } : obj
-    )
-  );
-  console.log(teamData)
-};
+  // function to increment a value
+  const handleIncrement = (event) => {
+    console.log(event.target);
+    setTeamData(
+      teamData.map((obj) =>
+        obj.id == event.target.id ? { ...obj, counter: obj.counter + 1 } : obj
+      )
+    );
+    console.log(teamData);
+  };
 
-// function to decrement a value 
-const handleDecrement = (event) => {
-  console.log(event)
-  console.log(event.target)
-  setTeamData(
-    teamData.map((obj) =>
-      obj.id == event.target.id ? { ...obj, counter: (obj.counter -1) } : obj
-    )
-  );
-};
+  // function to decrement a value
+  const handleDecrement = (event) => {
+    console.log(event);
+    console.log(event.target);
+    setTeamData(
+      teamData.map((obj) =>
+        obj.id == event.target.id ? { ...obj, counter: obj.counter - 1 } : obj
+      )
+    );
+  };
+
+  // copy and paste are please don't implement anything below this
+// copy and paste are please don't implement anything above/below this
 
 
-console.log(teamData)
 
+
+
+
+
+
+
+
+  // copy and paste are please don't implement anything above this
+
+  console.log(teamData);
 
   return (
     <div className="App">
       <div className="App-grid">
         <Nav className="App-grid__Nav" />
         <Filter className="App-grid__Filter" />
-        <Tickets ident={teamData.id} teamData={teamData} handleIncrement={handleIncrement} handleDecrement={handleDecrement}/>
+        <Tickets
+          ident={teamData.id}
+          teamData={teamData}
+          handleIncrement={handleIncrement}
+          handleDecrement={handleDecrement}
+        />
       </div>
       <Footer />
     </div>
