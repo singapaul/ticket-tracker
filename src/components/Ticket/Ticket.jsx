@@ -28,13 +28,7 @@ const Ticket = ({ teamMember }) => {
     }
   };
 
-  const warningFlag = () => {
-    if (counter > 24) {
-      return false;
-    } else {
-      return true;
-    }
-  };
+
 
   const warning = () => {
     if (counter <25) {
