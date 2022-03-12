@@ -5,7 +5,7 @@ import Nav from "./components/Nav/Nav";
 import Tickets from "./components/Tickets/Tickets";
 import team from "./data/team.js";
 import React, { useState } from "react";
-import { getQueriesForElement } from "@testing-library/react";
+
 
 function App() {
   // Setting the initial app state
