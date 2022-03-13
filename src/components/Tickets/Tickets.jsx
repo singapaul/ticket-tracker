@@ -1,6 +1,6 @@
 import React from "react";
 import "./Tickets.scss";
-
+// small change
 const Tickets = ({ teamData, handleIncrement, handleDecrement }) => {
   const cardsArray = teamData.map((member) => {
     // function to change the color of the card based on the state value
