@@ -67,8 +67,17 @@
   }
 }
 
-@media screen and (min-width: 992px) {
-  .nav-bar {
-    grid-column: 1 / -1;
+
+@media only screen and (max-width: 586px) {
+  .footer {
+    justify-content: space-between;
+    &__Greeting{display: none;}
+    &__links{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
   }
+ 
 }

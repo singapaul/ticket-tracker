@@ -17,18 +17,16 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   width: 100%;
-  grid-area: 2/2/3/3;
+  grid-area: 1/2/2/3;
   margin:32px;
   padding: 0 50px;
 }
 
 .teamMember {
-  width: 220px;
-  height: 400px;
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);
-  padding: 15px;
-  margin: 10px;
-  // background-color: $color-projectRouge;
+  width: 180px;
+  height: 450px;
+  padding: 20px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -44,10 +42,6 @@
     0.97897rem calc(110% - 0.1rem)
   );
 
-// background colors: 
-
-
-
 
   &:hover {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -58,12 +52,15 @@
     color: $color-projectBlack;
     font-size: 1em;
     font-weight: bold;
+    font-family: Bassanova W03 Regular, sans-serif;
   }
 
   &__name {
     color: $color-projectWhite;
-    font-size: 2.7em;
+    font-size: 2.1em;
     margin: 10px 0;
+    font-weight: bold;
+    font-family: Bassanova W03 Regular, sans-serif;
   }
 
   &__role-header {
@@ -71,12 +68,15 @@
     font-size: 1em;
     font-weight: bold;
     margin: 10px 0;
+    font-family: Bassanova W03 Regular, sans-serif;
   }
 
   &__role {
     color: $color-projectWhite;
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin: 10px 0;
+    font-weight: bold;
+    font-family: Bassanova W03 Regular, sans-serif;
   }
 
   &__count-header {
@@ -84,6 +84,7 @@
     font-size: 1em;
     font-weight: bold;
     margin: 10px 0;
+    font-family: Bassanova W03 Regular, sans-serif;
   }
 
   &__counterBox {
@@ -91,12 +92,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    font-family: Bassanova W03 Regular, sans-serif;
 
     &-button {
       background: none;
       border: 0;
-      font-size: 4em;
-      margin: 0 7px;
+      font-size: 2em;
+      margin: 10px 15px 0 15px;
       color: $color-projectBlack;
     }
 
@@ -123,4 +125,48 @@
 }
 .red{
   background-color: $color-projectRed;
+}
+
+
+// restyling the cards at media widths
+
+@media only screen and (max-width: 1700px) {
+  
+  .teamContainer {
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+   
+  }
+
+}
+
+@media only screen and (max-width: 1174px) {
+  
+  .teamContainer {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    margin: 0 auto 0 auto;
+    
+   
+  }
+
+}
+
+
+@media only screen and (max-width: 723px) {
+  
+  .teamContainer {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin: 0 auto 0 auto;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  
+  .teamContainer {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    margin: 0 auto 0 auto;
+  }
 }

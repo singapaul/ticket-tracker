@@ -2,19 +2,27 @@
 
 *{margin: 0;
 padding: 0;
-box-sizing: border-box;}
+box-sizing: border-box;
+background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);}
 
 .App-grid{
   display: grid;
-  grid-template-rows:10% 1fr;
-  grid-template-columns: 20% 1fr;
-
-
- 
+  grid-template-columns: 10% 1fr;
 };
 
 .App{
   background-color: #AEC6D2;
   background-color: $color-projectBlue;
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);
+}
+
+
+@media only screen and (max-width: 1174px) {
+  
+  .App-grid{
+    display: flex;
+ flex-direction: column;
+ align-items: center
+  };
+
 }
