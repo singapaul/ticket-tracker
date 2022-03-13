@@ -5,6 +5,7 @@ import Nav from "./components/Nav/Nav";
 import Tickets from "./components/Tickets/Tickets";
 import team from "./data/team.js";
 import React, { useState } from "react";
+import Chart from "./components/chart/Chart";
 
 function App() {
   // Setting the initial app state for counters
@@ -85,6 +86,7 @@ function App() {
           handleDecrement={handleDecrement}
         />
       </div>
+      <Chart teamData={teamData}/>
       <Footer />
     </div>
   );
