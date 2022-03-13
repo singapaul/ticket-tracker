@@ -3,10 +3,7 @@ import "./Tickets.scss";
 
 const Tickets = ({ teamData, handleIncrement, handleDecrement }) => {
   const cardsArray = teamData.map((member) => {
-    console.log(member.name);
-    console.log(member.id);
-    console.log(member.counter);
-
+    // function to change the color of the card based on the state value
     const colorIncrement = () => {
       if (member.counter >= 0 && member.counter <= 5) {
         return "teamMember green";
@@ -19,11 +16,25 @@ const Tickets = ({ teamData, handleIncrement, handleDecrement }) => {
       }
     };
 
+    // function to change the text of the card based on the state value
+
+    const roleFunction = () => {
+      if (member.counter < 25) {
+        return "role";
+      } else if (member.counter >= 24 && member.counter <= 40) {
+        return "Get cracking!";
+      } else if (member.counter > 39) {
+        return "Please submit P45";
+      } else {
+        return;
+      }
+    };
+
     return (
       <div key={member.id} className={colorIncrement()}>
         <p className="teamMember__name-header">name</p>
         <p className="teamMember__name">{member.name}</p>
-        <p className="teamMember__role-header">role</p>
+        <p className="teamMember__role-header">{roleFunction()}</p>
         <p className="teamMember__role">{member.role}</p>
         <p className="teamMember__count-header">tickets</p>
         <div className="teamMember__counterBox">

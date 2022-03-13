@@ -17,11 +17,19 @@ function App() {
         counter: 0,
       };
     })
-  );
+  )
+
+  // setting the state for the job role filter
+
+  const [showCard, setShowCard] = useState(true)
+
+const onToggle =() =>{
+  setShowCard(!showCard)
+}
+
 
   // function to increment a value
   const handleIncrement = (event) => {
-    console.log(event.target);
     setTeamData(
       teamData.map((obj) =>
         obj.id == event.target.id ? { ...obj, counter: obj.counter + 1 } : obj
@@ -44,26 +52,6 @@ function App() {
       })
     );
   };
-
-  // // copy and paste are please don't implement anything below this
-
-  // const warning = () => {
-  //   if (counter <25) {
-  //     return teamMember.role
-  //   } else if (counter >= 24 && counter <=40) {
-  //     return "Get cracking!";
-  //   } else if (counter > 39) {
-  //     return "Please submit P45";
-  //   } else {
-  //     return
-  //   }
-  // };
-
-  // copy and paste are please don't implement anything above this
-
-  // copy and paste are please don't implement anything above this
-
-  console.log(teamData);
 
   return (
     <div className="App">
