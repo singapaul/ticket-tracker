@@ -7,7 +7,7 @@ import team from "./data/team.js";
 import React, { useState } from "react";
 
 function App() {
-  // Setting the initial app state
+  // Setting the initial app state for counters
   const [teamData, setTeamData] = useState(
     team.map((member) => {
       return {
@@ -17,16 +17,32 @@ function App() {
         counter: 0,
       };
     })
-  )
+  );
 
   // setting the state for the job role filter
 
-  const [showCard, setShowCard] = useState(true)
+  const [teamShowCard, setTeamShowCard] = useState(
+    team.map((member) => {
+      return {
+        id: member.id,
+        name: member.name,
+        role: member.role,
+        show: true,
+      };
+    })
+  );
 
-const onToggle =() =>{
-  setShowCard(!showCard)
-}
-
+  const onToggle = (event) => {
+    // need to code in how the state changes
+    console.log("world hello");
+    console.log(event.target)
+    setTeamShowCard(
+      teamShowCard.map((obj) =>
+        obj.id == event.target.id ? { ...obj, show: false } : obj
+      )
+    );
+    console.log(teamShowCard)
+  };
 
   // function to increment a value
   const handleIncrement = (event) => {
@@ -57,10 +73,13 @@ const onToggle =() =>{
     <div className="App">
       <Nav className="App-grid__Nav" />
       <div className="App-grid">
-        <Filter className="App-grid__Filter" />
+        <Filter
+          onToggle={onToggle}
+          teamShowCard={teamShowCard}
+          className="App-grid__Filter"
+        />
         <Tickets
           className="Tickets"
-          ident={teamData.id}
           teamData={teamData}
           handleIncrement={handleIncrement}
           handleDecrement={handleDecrement}
