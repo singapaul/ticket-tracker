@@ -3,7 +3,7 @@
 *{margin: 0;
 padding: 0;
 box-sizing: border-box;
-background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);}
+// background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);}
 
 .App-grid{
   display: grid;
@@ -13,7 +13,7 @@ background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concre
 .App{
   background-color: #AEC6D2;
   background-color: $color-projectBlue;
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);
+  // background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);
 }
 
 
