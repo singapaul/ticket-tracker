@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./Tickets.scss";
 // small change
@@ -63,3 +64,4 @@ const Tickets = ({ teamData, handleIncrement, handleDecrement }) => {
   return <div className="teamContainer">{cardsArray}</div>;
 };
 export default Tickets;
+
