@@ -39,7 +39,7 @@ function App() {
     console.log(event.target)
     setTeamShowCard(
       teamShowCard.map((obj) =>
-        obj.id == event.target.id ? { ...obj, show: false } : obj
+        obj.id.toString() === event.target.id ? { ...obj, show: false } : obj
       )
     );
     console.log(teamShowCard)
@@ -49,7 +49,7 @@ function App() {
   const handleIncrement = (event) => {
     setTeamData(
       teamData.map((obj) =>
-        obj.id == event.target.id ? { ...obj, counter: obj.counter + 1 } : obj
+        obj.id.toString() === event.target.id ? { ...obj, counter: obj.counter + 1 } : obj
       )
     );
     console.log(teamData);
@@ -60,11 +60,11 @@ function App() {
     setTeamData(
       teamData.map((obj) => {
         if (obj.counter > 0) {
-          return obj.id == event.target.id
+          return obj.id.toString() === event.target.id
             ? { ...obj, counter: obj.counter - 1 }
             : obj;
         } else {
-          return obj.id == event.target.id ? { ...obj, counter: 0 } : obj;
+          return obj.id.toString() === event.target.id ? { ...obj, counter: 0 } : obj;
         }
       })
     );
