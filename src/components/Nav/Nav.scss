@@ -24,7 +24,8 @@
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);
   background-color: $color-projectRed;
   transition: all 0.25s;
-  grid-area: 1/1/2/3;
+  grid-column: 1/-1;
+  
 
   &:hover {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -185,8 +186,15 @@
   }
 }
 
-@media screen and (min-width: 992px) {
-  .nav-bar {
-    grid-column: 1 / -1;
+@media only screen and (max-width: 563px) {
+  .nav {
+    font-size: 0.7em;
   }
+}
+
+@media only screen and (max-width: 435px) {
+  .nav {
+    font-size: 0.5em;
+  }
+ 
 }
