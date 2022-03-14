@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/REPONAME/static/css/main.c7a8f2a2.css",
-    "main.js": "/REPONAME/static/js/main.10ab2237.js",
-    "static/js/787.99c52fad.chunk.js": "/REPONAME/static/js/787.99c52fad.chunk.js",
-    "index.html": "/REPONAME/index.html",
-    "main.c7a8f2a2.css.map": "/REPONAME/static/css/main.c7a8f2a2.css.map",
-    "main.10ab2237.js.map": "/REPONAME/static/js/main.10ab2237.js.map",
-    "787.99c52fad.chunk.js.map": "/REPONAME/static/js/787.99c52fad.chunk.js.map"
+    "main.css": "/ticket-tracker/static/css/main.c7a8f2a2.css",
+    "main.js": "/ticket-tracker/static/js/main.67703285.js",
+    "static/js/787.99c52fad.chunk.js": "/ticket-tracker/static/js/787.99c52fad.chunk.js",
+    "index.html": "/ticket-tracker/index.html",
+    "main.c7a8f2a2.css.map": "/ticket-tracker/static/css/main.c7a8f2a2.css.map",
+    "main.67703285.js.map": "/ticket-tracker/static/js/main.67703285.js.map",
+    "787.99c52fad.chunk.js.map": "/ticket-tracker/static/js/787.99c52fad.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c7a8f2a2.css",
-    "static/js/main.10ab2237.js"
+    "static/js/main.67703285.js"
   ]
 }
