@@ -6,7 +6,7 @@ import Tickets from "./components/Tickets/Tickets";
 import team from "./data/team.js";
 import React, { useState } from "react";
 import Chart from "./components/chart/Chart";
-import useLocalStorage from "./hooks";
+
 // test comment
 function App() {
   // State for the filters
@@ -55,8 +55,6 @@ function App() {
 
   const onToggle = (event) => {
     // need to code in how the state changes
-    console.log("world hello");
-    console.log(event.target);
     setTeamShowCard(
       teamShowCard.map((obj) =>
         obj.id.toString() === event.target.id ? { ...obj, show: false } : obj
@@ -76,7 +74,6 @@ function App() {
     );
     console.log(teamData);
   };
-
   // function to decrement a value
   const handleDecrement = (event) => {
     setTeamData(
