@@ -105,7 +105,7 @@ function App() {
       return;
     }
   };
-
+  // redeplo
   const filteredNames = teamData
     .filter((teamMember) => teamMember.name.toLowerCase().includes(searchValue))
     .filter((teamMember) =>
