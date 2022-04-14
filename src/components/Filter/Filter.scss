@@ -2,7 +2,7 @@
 
 .filter {
   min-width: 220px;
-  height: 800px;
+  max-height: 400px;
   padding: 20px;
   margin: 40px 20px 0 20px;
   background-color: $color-projectYellow;
@@ -43,5 +43,11 @@
     background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/746001/concrete-wall.png);
     transition: all 0.25s;
     grid-area: 1/1/2/2;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .filter__heading{font-size: 3rem;}
   }
 }
