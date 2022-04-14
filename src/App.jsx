@@ -6,6 +6,7 @@ import Tickets from "./components/Tickets/Tickets";
 import team from "./data/team.js";
 import React, { useState } from "react";
 import Chart from "./components/chart/Chart";
+import useLocalStorage from "./hooks";
 // test comment
 function App() {
   // State for the filters
