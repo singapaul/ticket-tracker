@@ -1,7 +1,7 @@
 @use "../../assets/SASS/variables.scss" as *;
 
 .filter {
-  width: 180px;
+  min-width: 220px;
   height: 800px;
   padding: 20px;
   margin: 40px 20px 0 20px;

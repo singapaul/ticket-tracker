@@ -1,41 +1,37 @@
 import React from "react";
 import "./Filter.scss";
 
-const Filter = ({onToggle}) => {
+const Filter = ({
+  searchValue,
+  handleSearch,
+  jobValue,
+  handlejobSearch,
+  selectedDropdown,
+  handleSort,
+}) => {
   return (
     <div className="filter">
       <h2 className="filter__heading">Filter</h2>
       <h4 className="filter__subHeading">By job</h4>
-      <div>
-        <label htmlFor="all">Select All</label>
-        <input id="all" type="checkbox" onChange={onToggle} />
-      </div>
-      <div>
-        <label htmlFor="junior">Junior Software Engineer</label>
-        <input id="junior" type="checkbox"  onChange={onToggle}/>
-      </div>
-      <div>
-        <label htmlFor="software">Software Engineer</label>
-        <input id="software" type="checkbox" onChange={onToggle} />
-      </div>
-      <div>
-        <label htmlFor="senior">Senior Software Engineer</label>
-        <input id="senior" type="checkbox" onChange={onToggle} />
-      </div>
-      <div>
-        <label htmlFor="project">Project Manager</label>
-        <input id="project" type="checkbox" onChange={onToggle} />
-      </div>
-      <div>
-        <label htmlFor="Tester">Tester</label>
-        <input id="Tester" type="checkbox"  onChange={onToggle}/>
-      </div>
-      <div>
-        <label htmlFor="hardman">Hard man</label>
-        <input id="hardman" type="checkbox" onChange={onToggle} />
-      </div>
-
+      <input
+        type="text"
+        label={"input"}
+        value={jobValue}
+        onChange={handlejobSearch}
+      />
       <h4 className="filter__subHeading">By employee</h4>
+      <input
+        type="text"
+        label={"input"}
+        value={searchValue}
+        onChange={handleSearch}
+      />
+      <h4 className="filter__subHeading">Sort dropdown</h4>
+      <select onChange={handleSort} value={selectedDropdown}>
+        <option value={"default"}>Default</option>
+        <option value={"hilow"}>Highest-Lowest</option>
+        <option value={"lowhi"}>Lowest-Highest</option>
+      </select>
     </div>
   );
 };

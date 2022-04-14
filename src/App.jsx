@@ -8,6 +8,25 @@ import React, { useState } from "react";
 import Chart from "./components/chart/Chart";
 // test comment
 function App() {
+  // State for the filters
+  const [searchValue, setSearchValue] = useState("");
+  const [jobsearchValue, setJobSearchValue] = useState("");
+  const [sortBy, setSortBy] = useState("default");
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    console.log(event.target.value);
+    setSearchValue(event.target.value);
+  };
+  const handlejobSearch = (event) => {
+    event.preventDefault();
+    setJobSearchValue(event.target.value);
+  };
+
+  const handleSort = (event) => {
+    setSortBy(event.target.value);
+    console.log(sortBy);
+  };
   // Setting the initial app state for counters
   const [teamData, setTeamData] = useState(
     team.map((member) => {
@@ -74,6 +93,24 @@ function App() {
     );
   };
 
+  // const sortNamesFunction = (sortBy, filteredNames) => {
+  //   if (sortBy === "default") {
+  //     return filteredNames.sort((a, b) => b.id - a.id);
+  //   } else if (sortBy === "lowhi") {
+  //     return filteredNames.sort((a, b) => b.counter - a.counter);
+  //   } else if (sortBy === "hilow") {
+  //     return filteredNames.sort((a, b) => a.counter - b.counter);
+  //   } else {
+  //     return;
+  //   }
+  // };
+
+  const filteredNames = teamData
+    .filter((teamMember) => teamMember.name.toLowerCase().includes(searchValue))
+    .filter((teamMember) =>
+      teamMember.role.toLowerCase().includes(jobsearchValue)
+    );
+
   return (
     <div className="App">
       <Nav className="App-grid__Nav" />
@@ -82,15 +119,21 @@ function App() {
           onToggle={onToggle}
           teamShowCard={teamShowCard}
           className="App-grid__Filter"
+          searchValue={searchValue}
+          handleSearch={handleSearch}
+          jobValue={jobsearchValue}
+          handlejobSearch={handlejobSearch}
+          selectedDropdown={sortBy}
+          handleSort={handleSort}
         />
         <Tickets
           className="Tickets"
-          teamData={teamData}
+          teamData={filteredNames}
           handleIncrement={handleIncrement}
           handleDecrement={handleDecrement}
         />
       </div>
-      <Chart teamData={teamData} />
+      <Chart teamData={filteredNames} />
       <Footer />
     </div>
   );
