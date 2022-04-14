@@ -6,7 +6,7 @@ import Tickets from "./components/Tickets/Tickets";
 import team from "./data/team.js";
 import React, { useState } from "react";
 import Chart from "./components/chart/Chart";
-
+// test comment
 function App() {
   // Setting the initial app state for counters
   const [teamData, setTeamData] = useState(
@@ -36,20 +36,22 @@ function App() {
   const onToggle = (event) => {
     // need to code in how the state changes
     console.log("world hello");
-    console.log(event.target)
+    console.log(event.target);
     setTeamShowCard(
       teamShowCard.map((obj) =>
         obj.id.toString() === event.target.id ? { ...obj, show: false } : obj
       )
     );
-    console.log(teamShowCard)
+    console.log(teamShowCard);
   };
 
   // function to increment a value
   const handleIncrement = (event) => {
     setTeamData(
       teamData.map((obj) =>
-        obj.id.toString() === event.target.id ? { ...obj, counter: obj.counter + 1 } : obj
+        obj.id.toString() === event.target.id
+          ? { ...obj, counter: obj.counter + 1 }
+          : obj
       )
     );
     console.log(teamData);
@@ -64,7 +66,9 @@ function App() {
             ? { ...obj, counter: obj.counter - 1 }
             : obj;
         } else {
-          return obj.id.toString() === event.target.id ? { ...obj, counter: 0 } : obj;
+          return obj.id.toString() === event.target.id
+            ? { ...obj, counter: 0 }
+            : obj;
         }
       })
     );
@@ -86,7 +90,7 @@ function App() {
           handleDecrement={handleDecrement}
         />
       </div>
-      <Chart teamData={teamData}/>
+      <Chart teamData={teamData} />
       <Footer />
     </div>
   );
