@@ -93,23 +93,27 @@ function App() {
     );
   };
 
-  // const sortNamesFunction = (sortBy, filteredNames) => {
-  //   if (sortBy === "default") {
-  //     return filteredNames.sort((a, b) => b.id - a.id);
-  //   } else if (sortBy === "lowhi") {
-  //     return filteredNames.sort((a, b) => b.counter - a.counter);
-  //   } else if (sortBy === "hilow") {
-  //     return filteredNames.sort((a, b) => a.counter - b.counter);
-  //   } else {
-  //     return;
-  //   }
-  // };
+  const sortNamesFunction = (sortBy, filteredNames) => {
+    if (sortBy === "default") {
+      return filteredNames.sort((a, b) => a.id - b.id);
+    } else if (sortBy === "lowhi") {
+      return filteredNames.sort((a, b) => a.counter - b.counter);
+    } else if (sortBy === "hilow") {
+      return filteredNames.sort((a, b) => b.counter - a.counter);
+    } else {
+      return;
+    }
+  };
 
   const filteredNames = teamData
     .filter((teamMember) => teamMember.name.toLowerCase().includes(searchValue))
     .filter((teamMember) =>
       teamMember.role.toLowerCase().includes(jobsearchValue)
     );
+
+  const sortedNames = sortNamesFunction(sortBy, filteredNames);
+
+  console.log(sortedNames);
 
   return (
     <div className="App">
