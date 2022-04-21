@@ -6,6 +6,7 @@ import Tickets from "./components/Tickets/Tickets";
 import team from "./data/team.js";
 import React, { useState } from "react";
 import Chart from "./components/chart/Chart";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 // test comment
 function App() {
@@ -13,6 +14,7 @@ function App() {
   const [searchValue, setSearchValue] = useState("");
   const [jobsearchValue, setJobSearchValue] = useState("");
   const [sortBy, setSortBy] = useState("default");
+  const [name, setName] = useLocalStorage("key", "kevin");
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -28,6 +30,11 @@ function App() {
     setSortBy(event.target.value);
     console.log(sortBy);
   };
+
+  const handleChange = (event) => {
+    setName(event.target.value);
+  };
+
   // Setting the initial app state for counters
   const [teamData, setTeamData] = useState(
     team.map((member) => {
@@ -117,6 +124,7 @@ function App() {
     <div className="App">
       <Nav className="App-grid__Nav" />
       <div className="App-grid">
+        <h1>{name}</h1>
         <Filter
           onToggle={onToggle}
           teamShowCard={teamShowCard}
@@ -136,6 +144,8 @@ function App() {
         />
       </div>
       <Chart teamData={filteredNames} />
+      <h1>{name}</h1>
+      <input type="text" onChange={handleChange} />
       <Footer />
     </div>
   );
