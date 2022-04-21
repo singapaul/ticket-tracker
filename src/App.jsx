@@ -142,12 +142,12 @@ function App() {
         />
         <Tickets
           className="Tickets"
-          teamData={filteredNames}
+          teamData={sortedNames}
           handleIncrement={handleIncrement}
           handleDecrement={handleDecrement}
         />
       </div>
-      <Chart teamData={filteredNames} />
+      <Chart teamData={sortedNames} />
       <Footer />
     </div>
   );
