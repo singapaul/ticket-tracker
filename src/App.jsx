@@ -14,7 +14,6 @@ function App() {
   const [searchValue, setSearchValue] = useState("");
   const [jobsearchValue, setJobSearchValue] = useState("");
   const [sortBy, setSortBy] = useState("default");
-  const [name, setName] = useLocalStorage("key", "kevin");
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -31,12 +30,20 @@ function App() {
     console.log(sortBy);
   };
 
-  const handleChange = (event) => {
-    setName(event.target.value);
-  };
-
   // Setting the initial app state for counters
-  const [teamData, setTeamData] = useState(
+  // const [teamData, setTeamData] = useState(
+  //   team.map((member) => {
+  //     return {
+  //       id: member.id,
+  //       name: member.name,
+  //       role: member.role,
+  //       counter: 0,
+  //     };
+  //   })
+  // );
+
+  const [teamData, setTeamData] = useLocalStorage(
+    "States",
     team.map((member) => {
       return {
         id: member.id,
@@ -118,13 +125,10 @@ function App() {
 
   const sortedNames = sortNamesFunction(sortBy, filteredNames);
 
-  console.log(sortedNames);
-
   return (
     <div className="App">
       <Nav className="App-grid__Nav" />
       <div className="App-grid">
-        <h1>{name}</h1>
         <Filter
           onToggle={onToggle}
           teamShowCard={teamShowCard}
@@ -144,8 +148,6 @@ function App() {
         />
       </div>
       <Chart teamData={filteredNames} />
-      <h1>{name}</h1>
-      <input type="text" onChange={handleChange} />
       <Footer />
     </div>
   );

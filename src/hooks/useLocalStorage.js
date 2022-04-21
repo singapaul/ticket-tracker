@@ -9,7 +9,8 @@ export const useLocalStorage = (key, initialValue) => {
     if (localStorageValue === " ") {
       return initialValue;
     }
-    return localStorageValue;
+    console.log(JSON.parse(localStorageValue))
+    return JSON.parse(localStorageValue);
   });
 
   useEffect(() => {

@@ -6,19 +6,19 @@ const Nav = () => {
     <div className="nav">
       {/* space */}
       <a href="www.google.com" className="nav__icon">
-        <span class="split-text" data-text="Tracker">
+        <span className="split-text" data-text="Tracker">
           Tracker
         </span>
       </a>
 
       <ul className="nav__links">
         <a className="nav__links-link" href="www">
-          <span class="split-text" data-text="tickets">
+          <span className="split-text" data-text="tickets">
             tickets
           </span>
         </a>
         <a className="nav__links-link" href="www">
-          <span class="split-text" data-text="analytics">
+          <span className="split-text" data-text="analytics">
             analytics
           </span>
         </a>
