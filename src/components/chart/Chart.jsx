@@ -27,7 +27,7 @@ const Chart = ({ teamData }) => {
     plugins: {
       legend: {
         position: "bottom",
-        display:false,
+        display: false,
       },
       title: {
         display: true,
@@ -36,15 +36,14 @@ const Chart = ({ teamData }) => {
     },
   };
 
-
- const labels = teamData.map(member => member.name)
+  const labels = teamData.map((member) => member.name);
 
   const data = {
     labels,
     datasets: [
       {
         label: "No. of tickets",
-        data: teamData.map(member => member.counter),
+        data: teamData.map((member) => member.counter),
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
     ],
